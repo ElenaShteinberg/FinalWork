@@ -25,16 +25,18 @@ for (int i = 0; i < text.Length; i++)
     }
 }
 
-string[] text2 = new string[newSize];
-int j = 0;
-for (int i = 0; i < text.Length; i++)
-{
-    if (text[i].Length <= 3)
-    {
-        text2[j] = text[i];
-        j++;
-    }
-}
-
 if (newSize == 0) Console.WriteLine("В вашем массиве нет элементов длиной 3 и менее символов");
-else Console.WriteLine("Массив, состоящий из элементов от 3-х и менее символов: [" + string.Join(", ", text2) + "]");
+else
+{
+    string[] text2 = new string[newSize];
+    int j = 0;
+    for (int i = 0; i < text.Length; i++)
+    {
+        if (text[i].Length <= 3)
+        {
+            text2[j] = text[i];
+            j++;
+        }
+    }
+    Console.WriteLine("Массив, состоящий из элементов от 3-х и менее символов: [" + string.Join(", ", text2) + "]");
+}
